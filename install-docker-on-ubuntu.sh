@@ -33,19 +33,19 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plug
 sudo docker run --rm hello-world > /tmp/docker_hello_output.txt 2>&1
 
 if grep -q "Hello from Docker!" /tmp/docker_hello_output.txt; then
-	echo ""
-	echo ""
-	echo "======================================================================================================"
+  echo ""
+  echo ""
+  echo "======================================================================================================"
   echo "✅ 도커 설치 성공!"
   echo ""
   echo "💡 sudo 명령없이 도커를 사용하려면 세션을 새로고침해주세요."
   # docker 권한 설정 (현재 사용자에게 docker 권한 부여)
-	sudo groupadd docker 2>/dev/null
-	sudo usermod -aG docker $USER
+  sudo groupadd docker 2>/dev/null
+  sudo usermod -aG docker $USER
 else
-	echo ""
-	echo ""
-	echo "======================================================================================================"
+  echo ""
+  echo ""
+  echo "======================================================================================================"
   echo "❌ 도커 설치에 실패하였습니다. 에러 로그:"
   cat /tmp/docker_hello_output.txt
 fi
